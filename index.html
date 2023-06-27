@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diego Pascual</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+    integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
+    crossorigin="anonymous">
+</head>
+
+<body>
+
+  <section id="inicio">
+    <div class="fullscreen">
+      <h1>Desarrollador Backend apasionado por DevOps,</h1>
+      <h1>amante de la cocina y orgulloso dueño de Karma 🐶</h1>
+      <p>Diego Pascual</p>
+    </div>
+  </section>
+
+  <section id="sobre-mi">
+    <div class="container">
+      <h2>Sobre Mí</h2>
+      <p>¡Hola! Soy Diego, un apasionado desarrollador backend y entusiasta de DevOps. Me encanta
+        sumergirme en el mundo del backend y construir aplicaciones escalables y eficientes. También
+        disfruto explorando las mejores prácticas de DevOps y aplicándolas en mis proyectos.</p>
+      <p>En cuanto a mis virtudes, soy una persona perseverante y siempre estoy buscando nuevas formas
+        de mejorar mis habilidades. Además, tengo una gran capacidad para analizar problemas y
+        encontrar soluciones eficientes.</p>
+      <p>Por otro lado, como cualquier ser humano, también tengo defectos. A veces tiendo a ser
+        demasiado perfeccionista, lo que puede ralentizar mi ritmo de trabajo. Sin embargo, estoy
+        constantemente trabajando en mejorar esta faceta y encontrar un equilibrio entre la excelencia
+        y la eficiencia.</p>
+    </div>
+  </section>
+
+  <section id="backend">
+    <div class="container">
+      <h2>Backend</h2>
+      <p>Como desarrollador backend, tengo experiencia en el diseño y desarrollo de APIs y sistemas
+        escalables.</p>
+      <ul>
+        <li>Más de 5 años de experiencia en desarrollo backend con Python y Django.</li>
+        <li>2 años de experiencia en desarrollo con JS y TS.</li>
+        <li>Amplio conocimiento en bases de datos relacionales y no relacionales.</li>
+        <li>Experiencia en el uso de colas asíncronas para tareas de procesamiento.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="devops">
+    <div class="container">
+      <h2>DevOps</h2>
+      <p>Descubrí el mundo de DevOps a través de mi trabajo como desarrollador backend. Me di cuenta
+        de que no era suficiente con escribir un código sólido y eficiente, sino que también era
+        necesario asegurar su correcta puesta en producción y su escalabilidad.</p>
+      <p>En mi camino hacia el dominio de DevOps, he trabajado extensivamente con los servicios de AWS
+        (Amazon Web Services). He utilizado servicios como Amazon EC2 para implementar y administrar
+        servidores virtuales, Amazon RDS para bases de datos relacionales y Amazon DynamoDB para bases
+        de datos no relacionales.</p>
+      <p>También he utilizado servicios como Amazon S3 para almacenamiento de objetos, Amazon SQS para
+        colas de mensajes asíncronos y Amazon CloudWatch para monitoreo y registro de aplicaciones.
+      </p>
+      <p>A medida que profundizo en el mundo de DevOps, continúo explorando y aprendiendo sobre nuevas
+        herramientas y servicios que me ayuden a optimizar el ciclo de vida de desarrollo y despliegue
+        de aplicaciones.</p>
+    </div>
+  </section>
+  
+  <section id="contacto">
+    <div class="container">
+      <h2>Contacto</h2>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/diego-pascual/" target="_blank" class="linkedin">🔗 LinkedIn</a>
+        <a href="https://github.com/manderdeveloper" target="_blank" class="github">🐙 GitHub</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; Diego Pascual - <span id="year"></span></p>
+    </div>
+  </footer>
+  
+  <script>
+    const yearElement = document.getElementById('year');
+    const currentYear = new Date().getFullYear();
+    yearElement.textContent = currentYear;
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
