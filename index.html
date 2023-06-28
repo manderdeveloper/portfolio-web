@@ -4,15 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diego Pascual</title>
+  <title>Mander Factory</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
-    integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
-    crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="favicon.ico">
 </head>
 
 <body>
+  <nav>
+    <ul>
+    <li><a href="#inicio">🏠 Inicio</a></li>
+    <li><a href="#sobre-mi">😃 Sobre Mí</a></li>
+    <li><a href="#backend">🔙 Backend</a></li>
+    <li><a href="#devops">⚙️ DevOps</a></li>
+    <li><a href="#contacto">📧 Contacto</a></li>
+    <li><button id="modo-oscuro-btn">🌙</button></li>
+    </ul>
+  </nav>
 
   <section id="inicio">
     <div class="fullscreen">
@@ -28,13 +35,10 @@
       <p>¡Hola! Soy Diego, un apasionado desarrollador backend y entusiasta de DevOps. Me encanta
         sumergirme en el mundo del backend y construir aplicaciones escalables y eficientes. También
         disfruto explorando las mejores prácticas de DevOps y aplicándolas en mis proyectos.</p>
-      <p>En cuanto a mis virtudes, soy una persona perseverante y siempre estoy buscando nuevas formas
-        de mejorar mis habilidades. Además, tengo una gran capacidad para analizar problemas y
-        encontrar soluciones eficientes.</p>
-      <p>Por otro lado, como cualquier ser humano, también tengo defectos. A veces tiendo a ser
-        demasiado perfeccionista, lo que puede ralentizar mi ritmo de trabajo. Sin embargo, estoy
-        constantemente trabajando en mejorar esta faceta y encontrar un equilibrio entre la excelencia
-        y la eficiencia.</p>
+      <p>En mi tiempo libre, me encanta disfrutar de una buena taza de café ☕️ mientras me sumerjo en el
+      mundo de los videojuegos 🎮. Además, me apasiona la cocina 🍳 y me encanta experimentar con nuevas
+      recetas. También disfruto pasar tiempo al aire libre 🌳, especialmente paseando con mi perro Karma
+      🐶.!</p>
     </div>
   </section>
 
@@ -62,12 +66,6 @@
         (Amazon Web Services). He utilizado servicios como Amazon EC2 para implementar y administrar
         servidores virtuales, Amazon RDS para bases de datos relacionales y Amazon DynamoDB para bases
         de datos no relacionales.</p>
-      <p>También he utilizado servicios como Amazon S3 para almacenamiento de objetos, Amazon SQS para
-        colas de mensajes asíncronos y Amazon CloudWatch para monitoreo y registro de aplicaciones.
-      </p>
-      <p>A medida que profundizo en el mundo de DevOps, continúo explorando y aprendiendo sobre nuevas
-        herramientas y servicios que me ayuden a optimizar el ciclo de vida de desarrollo y despliegue
-        de aplicaciones.</p>
     </div>
   </section>
   
@@ -91,6 +89,82 @@
     const currentYear = new Date().getFullYear();
     yearElement.textContent = currentYear;
   </script>
-  <script src="script.js"></script>
+
+  <script>
+    // Ajustar la altura de cada sección al tamaño de la ventana
+    function adjustSectionHeight() {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        section.style.height = window.innerHeight + 'px';
+      });
+    }
+
+    // Llamar a la función al cargar la página y al cambiar el tamaño de la ventana
+    window.addEventListener('load', adjustSectionHeight);
+    window.addEventListener('resize', adjustSectionHeight);
+  </script>
+  <script>
+    // Obtener todas las secciones y enlaces del menú
+    const sections = document.querySelectorAll('section');
+    const menuLinks = document.querySelectorAll('nav a');
+
+    // Ajustar la altura de cada sección al tamaño de la ventana
+    function adjustSectionHeight() {
+      sections.forEach(section => {
+        section.style.height = window.innerHeight + 'px';
+      });
+    }
+
+    // Desplazarse a la sección correspondiente al hacer clic en un enlace del menú
+    menuLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    function scrollHandler() {
+        const scrollPosition = window.scrollY;
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            const targetLink = document.querySelector(`nav a[href="#${section.id}"]`);
+            menuLinks.forEach(link => link.classList.remove('active'));
+            targetLink.classList.add('active');
+          }
+        });
+      }
+
+    // Llamar a la función al cargar la página y al cambiar el tamaño de la ventana
+    window.addEventListener('load', () => {
+        adjustSectionHeight();
+        scrollHandler();
+      });
+
+    window.addEventListener('resize', adjustSectionHeight);
+    window.addEventListener('scroll', scrollHandler);
+    </script>
+  </script>
+  <script>
+    const modoOscuroBtn = document.getElementById("modo-oscuro-btn");
+    const secciones = document.querySelectorAll("section");
+    const footer = document.querySelector("footer");
+
+    modoOscuroBtn.addEventListener("click", () => {
+      secciones.forEach((seccion) => {
+        console.log(seccion)
+        seccion.classList.toggle("modo-oscuro");
+      });
+      footer.classList.toggle("modo-oscuro");
+    });
+  </script>
 </body>
 </html>

@@ -24,40 +24,43 @@ header {
 }
 
 nav {
-  text-align: right;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+nav:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  list-style: none;
+  text-align: center;
 }
 
 nav ul li {
-  display: inline;
+  display: inline-block;
+  margin: 0 10px;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  margin-right: 10px;
   font-size: 18px;
-  transition: color 0.3s ease;
+  padding: 5px 10px;
 }
 
 nav ul li a:hover {
-  color: #ddd;
-}
-
-section {
-  padding: 40px 0;
-  text-align: center;
+  color: #b19cd9;
 }
 
 h1 {
   font-size: 48px;
   margin: 0;
-  padding: 20px;
   text-align: center;
 }
 
@@ -78,13 +81,23 @@ ul {
   list-style-type: none;
 }
 
-/* Ajuste de contenido para evitar que quede oculto detrás del menú */
 section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  max-width: 100%;
+  box-sizing: border-box;
   padding-top: 100px;
+  padding: 40px 0;
+  text-align: center;
 }
 
 #inicio {
-  background-color: #0C134F;
+  background-color: #22A699;
   color: #fff;
   display: flex;
   align-items: center;
@@ -94,14 +107,14 @@ section {
 }
 
 #sobre-mi {
-  background-color: #1D267D;
+  background-color: #F2BE22;
   color: #fff;
   text-align: left;
   padding: 40px;
 }
 
 #backend {
-  background-color: #5C469C;
+  background-color: #F29727;
   color: #fff;
   text-align: left;
   padding: 40px;
@@ -116,15 +129,15 @@ section {
 }
 
 #devops {
-  background-color: #D4ADFC;
+  background-color: #F24C3D;
   color: #fff;
   text-align: left;
   padding: 40px;
 }
 
 #contacto {
-  background-color: #0C134F;
-  color: #fff;
+  background-color: #F8F1F1;
+  color: #111;
   text-align: center;
   padding: 40px;
 }
@@ -136,7 +149,7 @@ section {
 
 .social-icons a {
   display: inline-block;
-  color: #fff;
+  color: #111;
   font-size: 24px;
   margin-right: 10px;
   transition: color 0.3s ease;
@@ -147,8 +160,124 @@ section {
 }
 
 footer {
+  background-color: #22A699;
+  color: #fff;
+  padding: 80px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos del botón de modo oscuro */
+#modo-oscuro-btn {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Estilos para el tema oscuro de la sección Inicio */
+#inicio.modo-oscuro {
   background-color: #0C134F;
   color: #fff;
-  padding: 20px;
-  text-align: center;
+}
+
+/* Estilos para el tema oscuro de la sección Profesional */
+#sobre-mi.modo-oscuro {
+  background-color: #1D267D;
+  color: #fff;
+}
+
+/* Estilos para el tema oscuro de la sección Personal */
+#backend.modo-oscuro {
+  background-color: #19376D;
+  color: #fff;
+}
+
+/* Estilos para el tema oscuro de la sección DevOps */
+#devops.modo-oscuro {
+  background-color: #5C469C;
+  color: #fff;
+}
+
+/* Estilos para el tema oscuro de la sección Contacto */
+#contacto.modo-oscuro {
+  background-color: #D4ADFC;
+  color: #111;
+}
+
+footer.modo-oscuro {
+  background-color: #0C134F;
+  color: #fff;
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+
+  /* Ajustes de estilo para pantallas pequeñas */
+  body {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 35px;
+  }
+        nav ul {
+          flex-direction: column;
+          align-items: flex-end;
+          display: flex
+        }
+  
+    nav li {
+      margin: 0;
+    }
+  
+    nav a {
+      font-size: 14px;
+    }
+
+  section {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  footer {
+    padding: 10px;
+    height: 300px;
+  }
+}
+
+/* Estilos para tabletas */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+  /* Ajustes de estilo para tabletas */
+  body {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 35px;
+  }
+        nav ul {
+          flex-direction: column;
+          align-items: flex-end;
+          display: flex
+        }
+    nav li {
+      margin: 0;
+    }
+  
+    nav a {
+      font-size: 14px;
+    }
+
+  section {
+    font-size: 18px;
+    padding: 40px;
+  }
+
+  footer {
+    padding: 20px;
+    height: 300px;
+  }
 }
